@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../assets/Logo.svg'
 import SearchHortalica from '../../assets/SearchHortalica.svg'
 import SearchCategory from '../../assets/SearchCategory.svg'
-import { TriangleDownIcon } from '@chakra-ui/icons'
+import { TriangleDownIcon, Search2Icon } from '@chakra-ui/icons'
 import { Flex,
          Image,
          Box,
@@ -79,7 +79,7 @@ export const Home = () => {
                    Buscar hortaliça
                    <IconButton 
                         aria-label='Selecionar Categoria' 
-                        icon={<TriangleDownIcon/>}    
+                        icon={<Search2Icon/>}    
                         variant='ghost' 
                         marginLeft= '120px'  
                         color='black'               
