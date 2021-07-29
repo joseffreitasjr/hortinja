@@ -6,7 +6,8 @@ import { TriangleDownIcon, Search2Icon } from '@chakra-ui/icons'
 import { Flex,
          Image,
          Box,
-         IconButton
+         IconButton,
+         Text
        } 
        from "@chakra-ui/react"
 
@@ -16,10 +17,9 @@ export const Home = () => {
             bg='#E5E5E5'
             flexDirection='column'
             justifyContent='space-between'
-            minHeight='100vh'
-            
-            
+            minHeight='100vh'           
         >
+            {/* Cabeçalho - Header */}
             <Flex 
                 bg='#FFF'
                 paddingY='10px' 
@@ -34,19 +34,7 @@ export const Home = () => {
                        
                        
                 />
-                {/* <Image src={ SearchCategory } 
-                       alt='Fanpics Logo' 
-                       marginX='4'
-                      
-                />
-                <Image src={ SearchHortalica } 
-                alt='Fanpics Logo' 
-                marginX='4'
-                
-                       
-                       
-                /> */}
-                
+                                
                 <Box bg="#E5E5E5" 
                      w="20%" 
                      p={5} 
@@ -84,11 +72,26 @@ export const Home = () => {
                         marginLeft= '120px'  
                         color='black'               
                     />
-                </Box>
+                </Box>           
+            </Flex>
 
-                
+            <Flex  flexDirection='row' minHeight='85vh' backgroundImage='url()'>
 
             </Flex>
+
+
+
+
+
+
+
+
+             {/* Rodapé - Footer */}
+            <Box marginY='4'>
+                <Text textAlign='center' fontSize='15px' fontWeight='bold'>
+                    Copyright © 2021 Feito com 💚 por Kazap Tecnologia - Todos os direitos reservados
+                </Text>
+            </Box>
 
 
         </Flex>
