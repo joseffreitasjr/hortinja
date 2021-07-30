@@ -4,6 +4,7 @@ import BackgroundInfos from '../../assets/BackgroundInfos.svg'
 import Monetization from '../../assets/Monetization.svg'
 import Filter from '../../assets/Filter.svg'
 import Assignment from '../../assets/Assignment.svg'
+import Add from '../../assets/Add.svg'
 import { TriangleDownIcon } from '@chakra-ui/icons'
 import { Flex,
          Image,
@@ -275,9 +276,7 @@ export const Home = () => {
                             width='40px'
                             height='40px'
                             left='700px'
-                            top='310px' 
-
-           
+                            top='310px'            
                         />
                         <Text
                             position='absolute'
@@ -298,16 +297,91 @@ export const Home = () => {
                         </Text>
                     </Flex>
                   </Box> 
-                  <Divider 
-                        position='absolute'
-                        width='1080px'
-                        height='1px'
-                        left='420px'
-                        top='420px'
-                        background='#111111'         
-                  />         
-                  
-           
+            </Flex>
+
+            <Divider 
+                position='absolute'
+                width='1080px'
+                height='1px'
+                left='420px'
+                top='420px'
+                background='#111111'         
+            />   
+
+            {/* BOTÃO: + ADICIONAR CATEGORIA */}
+            <Flex
+                position='absolute'
+                width='360px'
+                height='40px'
+                left='976px'
+                top='450px'
+                background='#006B5C'
+                borderRadius='100px'
+            >
+                <Image src={ Add } 
+                            position='absolute'
+                            width='24.75px'
+                            height='24px'
+                            left='90px'
+                            top='10px' 
+                            borderRadius='100px'         
+                        />
+
+                <Text
+                    position='absolute'
+                    width='142px'
+                    height='21px'
+                    left='120px'
+                    top='10px'
+                    
+                    fontFamily='Poppins'
+                    fontStyle='normal'
+                    fontWeight='normal'
+                    fontSize='14px'
+                    line-height='21px'
+
+                    color='#FBFAFA'
+                >
+                    Adicionar Categoria
+                </Text>
+            </Flex>
+
+            {/* BOTÃO: + ADICIONAR HORTALIÇA */}
+            <Flex
+                position='absolute'
+                width='360px'
+                height='40px'
+                left='584px'
+                top='450px'
+                background='#006B5C'
+                borderRadius='100px'
+            >
+                <Image src={ Add } 
+                            position='absolute'
+                            width='24.75px'
+                            height='24px'
+                            left='90px'
+                            top='10px' 
+                            borderRadius='100px'         
+                        />
+
+                <Text
+                    position='absolute'
+                    width='142px'
+                    height='21px'
+                    left='120px'
+                    top='10px'
+                    
+                    fontFamily='Poppins'
+                    fontStyle='normal'
+                    fontWeight='normal'
+                    fontSize='14px'
+                    line-height='21px'
+
+                    color='#FBFAFA'
+                >
+                    Adicionar Hortaliça
+                </Text>
 
             </Flex>
 
