@@ -5,13 +5,15 @@ import Monetization from '../../assets/Monetization.svg'
 import Filter from '../../assets/Filter.svg'
 import Assignment from '../../assets/Assignment.svg'
 import Add from '../../assets/Add.svg'
+import { Post } from '../../components'
 import { TriangleDownIcon } from '@chakra-ui/icons'
 import { Flex,
          Image,
          Box,
          IconButton,
          Text,
-         Divider
+         Divider,
+         Button
        } 
        from "@chakra-ui/react"
 
@@ -99,8 +101,7 @@ export const Home = () => {
                     left='1190px'
                     top='12px'
                     borderRadius='100px'
-                    marginRight='10px' 
-                                    
+                    marginRight='10px'                                     
                 >
                   {/* Text - Buscar Hortaliça  */}
                   <Text
@@ -115,24 +116,32 @@ export const Home = () => {
                     fontWeight='normal'
                     fontSize='18px'
                     lineHeight='27px'
-                                      
+                    placeholder='Buscar Hortaliça'           
                     color='#757270'
                   >
                       Buscar hortaliça
                   </Text>
 
                     {/* Filter */}
-                    <Image
-                        src={ Filter } 
-                        alt='Filter'
-                        aria-label='Selecionar Categoria'   
-                        variant='ghost' 
-                        position='absolute'
-                        width='40px'
-                        height='40px'
+                    <Button
                         left='270px'
-                        top='8px' 
-                    />
+                        top='9px'
+                        variant='ghost'
+                        borderRadius='100px'
+                    >
+                        <Image
+                            src={ Filter } 
+                            alt='Filter'
+                            aria-label='Selecionar Categoria'   
+                            variant='ghost' 
+                            position='absolute'
+                            width='40px'
+                            height='40px'
+                            left='1px'
+                            top='1px'
+                            onClick={() => console.log('abrir modal')} 
+                        />
+                    </Button>    
                 </Box>           
             </Flex>
 
@@ -317,15 +326,21 @@ export const Home = () => {
                 top='450px'
                 background='#006B5C'
                 borderRadius='100px'
-            >
-                <Image src={ Add } 
-                            position='absolute'
-                            width='24.75px'
-                            height='24px'
-                            left='90px'
-                            top='10px' 
-                            borderRadius='100px'         
-                        />
+            >   
+                <Button
+                    left='80px'
+                    variant='ghost'
+                >
+                    <Image src={ Add } 
+                                position='absolute'
+                                width='24.75px'
+                                height='24px'
+                                left='8px'
+                                top='10px' 
+                                borderRadius='100px' 
+                                onClick={() => console.log('abrir modal')}       
+                    />
+                </Button>
 
                 <Text
                     position='absolute'
@@ -355,42 +370,53 @@ export const Home = () => {
                 top='450px'
                 background='#006B5C'
                 borderRadius='100px'
-            >
-                <Image src={ Add } 
-                            position='absolute'
-                            width='24.75px'
-                            height='24px'
-                            left='90px'
-                            top='10px' 
-                            borderRadius='100px'         
-                        />
-
-                <Text
-                    position='absolute'
-                    width='142px'
-                    height='21px'
-                    left='120px'
-                    top='10px'
-                    
-                    fontFamily='Poppins'
-                    fontStyle='normal'
-                    fontWeight='normal'
-                    fontSize='14px'
-                    line-height='21px'
-
-                    color='#FBFAFA'
+            >   
+                <Button
+                    left='80px'
+                    variant='ghost'
                 >
-                    Adicionar Hortaliça
-                </Text>
+                
+                    <Image src={ Add } 
+                                position='absolute'
+                                width='24.75px'
+                                height='24px'
+                                left='8px'
+                                top='10px' 
+                                borderRadius='100px'  
+                                onClick={() => console.log('abrir modal')}        
+                    />
+
+                    <Text
+                        position='absolute'
+                        width='142px'
+                        height='21px'
+                        left='30px'
+                        top='12px'
+                        
+                        fontFamily='Poppins'
+                        fontStyle='normal'
+                        fontWeight='normal'
+                        fontSize='14px'
+                        line-height='21px'
+
+                        color='#FBFAFA'
+                    >
+                        Adicionar Hortaliça
+                    </Text>
+                </Button>
+
+                <Box 
+                    position='absolute'
+                    width='221px'
+                    height='54px'
+                    left='-120px'
+                    top='207px'
+                >
+                    <Post />
+                </Box>
+
 
             </Flex>
-
-
-
-
-
-
-
 
              {/* Rodapé - Footer */}
             <Box marginY='4'>
