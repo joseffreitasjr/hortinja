@@ -1,12 +1,19 @@
 import React from 'react'
+
 import Logo from '../../assets/Logo.svg'
 import BackgroundInfos from '../../assets/BackgroundInfos.svg'
 import Monetization from '../../assets/Monetization.svg'
 import Filter from '../../assets/Filter.svg'
 import Assignment from '../../assets/Assignment.svg'
 import Add from '../../assets/Add.svg'
+
+import PoppinsBold from '../../assets/Poppins-Bold.ttf'
+import PoppinsLight from '../../assets/Poppins-Light.ttf'
+
 import { Post } from '../../components'
+
 import { TriangleDownIcon } from '@chakra-ui/icons'
+
 import { Flex,
          Image,
          Box,
@@ -18,15 +25,41 @@ import { Flex,
        from "@chakra-ui/react"
 
 export const Home = () => {
+
+    const posts = [
+        {
+          id: '1',
+          title: 'Alface',
+          subtitle: 'Alface Crespa',
+          description: 'A alface crespa é uma hortaliça folhosa muito popular entre os brasileiros. Costuma ser consumida crua, geralmente em saladas.',
+          price: '1,99'
+        },
+        {
+            id: '2',
+            title: 'Couve',
+            subtitle: 'Couve Orgânico',
+            description: 'A alface crespa é uma hortaliça folhosa muito popular entre os brasileiros. Costuma ser consumida crua, geralmente em saladas.',
+            price: '3,99'
+        },
+        {
+            id: '3',
+            title: 'Alface',
+            subtitle: 'Alface Crespa',
+            description: 'A alface crespa é uma hortaliça folhosa muito popular entre os brasileiros. Costuma ser consumida crua, geralmente em saladas.',
+            price: '4,99'
+        }
+    ]
+
     return (
         // Page
         <Flex 
             position='relative'
-            width='1920px'
-            height='2228px'
-            Top='1920px'
-            Left='-2676px'
-            //flexDirection = 'column'
+            width ='100%'
+            height='2320px'
+            display='flex'
+            flexDirection = 'column'
+            justifyContent='center'
+            alignItems='center'
             
 
             background='#D9D2CF'          
@@ -34,7 +67,7 @@ export const Home = () => {
             {/* Header */}
             <Flex 
                 position='absolute'
-                width='1920px'
+                width='100%'
                 height='80px'
                 left='0px'
                 top='0px'
@@ -68,7 +101,7 @@ export const Home = () => {
                        left='35px'
                        top='17px'
                        
-                       fontFamily='Poppins'
+                       src= { PoppinsLight }
                        fontStyle='normal'
                        fontWeight='normal'
                        fontSize='18px'
@@ -111,12 +144,11 @@ export const Home = () => {
                     left='40px'
                     top='15px'
                     
-                    fontFamily='Poppins'
+                    src={ PoppinsLight }
                     fontStyle='normal'
                     fontWeight='normal'
                     fontSize='18px'
                     lineHeight='27px'
-                    placeholder='Buscar Hortaliça'           
                     color='#757270'
                   >
                       Buscar hortaliça
@@ -175,7 +207,7 @@ export const Home = () => {
                             left='24px'
                             top='24px'
 
-                            fontFamily='Poppins'
+                            src= {PoppinsBold}
                             fontStyle='normal'
                             fontWeight='bold'
                             fontSize='20px'
@@ -217,7 +249,7 @@ export const Home = () => {
                         left='1100px'
                         top='310px'
                         
-                        fontFamily='Poppins'
+                        src={ PoppinsBold }
                         fontStyle='normal'
                         fontWeight='bold'
                         fontSize='24px'
@@ -252,7 +284,7 @@ export const Home = () => {
                             left='24px'
                             top='24px'
 
-                            fontFamily='Poppins'
+                            src= { PoppinsBold }
                             fontStyle='normal'
                             fontWeight='bold'
                             fontSize='20px'
@@ -264,12 +296,12 @@ export const Home = () => {
                         </Text>
                         <Text
                             position='absolute'
-                            width='200px'
+                            width='230px'
                             height='47px'
                             left='24px'
                             top='48px'
 
-                            fontFamily='Poppins'
+                            src={ PoppinsLight }
                             fontStyle='normal'
                             fontSize='15px'
                             lineHeight='25px'
@@ -294,7 +326,7 @@ export const Home = () => {
                             left='750px'
                             top='310px'
                             
-                            fontFamily='Poppins'
+                            src={ PoppinsBold }
                             fontStyle='normal'
                             fontWeight='bold'
                             fontSize='24px'
@@ -349,7 +381,7 @@ export const Home = () => {
                     left='120px'
                     top='10px'
                     
-                    fontFamily='Poppins'
+                    src={ PoppinsLight }
                     fontStyle='normal'
                     fontWeight='normal'
                     fontSize='14px'
@@ -393,7 +425,7 @@ export const Home = () => {
                         left='30px'
                         top='12px'
                         
-                        fontFamily='Poppins'
+                        src= { PoppinsLight }
                         fontStyle='normal'
                         fontWeight='normal'
                         fontSize='14px'
@@ -405,6 +437,7 @@ export const Home = () => {
                     </Text>
                 </Button>
 
+                
                 <Box 
                     position='absolute'
                     width='221px'
@@ -412,15 +445,42 @@ export const Home = () => {
                     left='-120px'
                     top='207px'
                 >
-                    <Post />
+                    <Flex
+                        flexDirection='row'
+                        marginLeft='200px'
+                    >
+                        {posts.map(post => (
+                            <Post 
+                                key={post._id}
+                                title={post.title}
+                                subtitle={post.subtitle}
+                                description={post.description}
+                                price={post.price}
+                                openEditModal={() => console.log('abrir modal de edição')}
+                                openDeleteModal={() => console.log('abrir modal de exclusão')}
+                            />
+                        ))}
+                    </Flex>
                 </Box>
-
-
             </Flex>
 
              {/* Rodapé - Footer */}
             <Box marginY='4'>
-                <Text textAlign='center' fontSize='15px' fontWeight='bold'>
+                <Text 
+                    position='absolute'
+                    width='670px'
+                    height='24px'
+                    left='625px'
+                    top='2276px'
+
+                    src= { PoppinsLight }
+                    font-style='normal'
+                    font-weight='normal'
+                    font-size='16px'
+                    line-height='24px'
+                    
+                    color='#111111'
+                >
                     Copyright © 2021 Feito com 💚 por Kazap Tecnologia - Todos os direitos reservados
                 </Text>
             </Box>
